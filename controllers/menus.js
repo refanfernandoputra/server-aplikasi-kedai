@@ -20,11 +20,11 @@ exports.show = (req, res) => {
 
 exports.store = (req, res) => {
 
-    const {name,price,categorieId,image} = req.body
+    const {name,price,categorieid,image} = req.body
     Menus.create({
         name: name,
         price:price,
-        categorieId:categorieId,
+        categorieid:categorieid,
         image:image
     }).then(Menus => {
         res.send({
@@ -44,7 +44,7 @@ exports.update = (req, res) => {
 }
 
 exports.destroy = (req, res) => {
-    menus.destroy(
+    Menus.destroy(
         {
             where: { id: req.params.id }
         }).then(menus => {

@@ -39,7 +39,7 @@ exports.update = (req, res) => {
 }
 
 exports.destroy = (req, res) => {
-    orders.destroy(
+    Orders.destroy(
         {
             where: { id: req.params.id }
         }).then(orders => {

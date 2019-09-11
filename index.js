@@ -32,14 +32,12 @@ app.group("/api/v1", (router) => {
 
     router.get('/Orders', Orders.index)    
     router.get('/Orders/:id', Orders.show) 
-    router.post('/Orders', Orders.store)    
     router.post('/Orders', Orders.store)
     router.patch('/Orders/:id', Orders.update)    
     router.delete('/Orders/:id', Orders.destroy)   
 
     router.get('/Transactions', Transactions.index)    
     router.get('/Transactions/:id', Transactions.show)
-    router.post('/Transactions', Transactions.store)   
     router.post('/Transactions', Transactions.store)
     router.patch('/Transactions/:id', Transactions.update)    
     router.delete('/Transactions/:id', Transactions.destroy)    
