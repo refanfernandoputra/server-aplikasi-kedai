@@ -14,17 +14,17 @@ exports.show = (req, res) => {
 
 exports.store = (req, res) => {
 
-    const {menuId,price,qty,status,transactionId} = req.body
+    const {menuId,price,qty,status,transactionsId} = req.body
     Orders.create({
         menuId:menuId,
         price:price,
         qty:qty,
         status:status,
-        transactionId:transactionId
+        transactionId:transactionsId
     }).then(Orders => {
         res.send({
             messages: "success",
-            Orders: Orders.name
+            Orders
         })
     })
 }

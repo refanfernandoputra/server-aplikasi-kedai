@@ -14,12 +14,12 @@ exports.show = (req, res) => {
 
 exports.store = (req, res) => {
 
-    const {tableNumber,discount,finishedTime,subTotal,serviceCharge,tax,total,isPaid} = req.body
+    const {tableNumber,discount,finishedTime,subtotal,serviceCharge,tax,total,isPaid} = req.body
     Transactions.create({
         tableNumber:tableNumber,
         discount:discount,
         finishedTime:finishedTime,
-        subTotal:subTotal,
+        subtotal:subtotal,
         serviceCharge:serviceCharge,
         tax:tax,
         total:total,
@@ -27,7 +27,7 @@ exports.store = (req, res) => {
     }).then(Transactions => {
         res.send({
             messages: "success",
-            Transactions: Transactions.name
+            Transactions
         })
     })
 }
